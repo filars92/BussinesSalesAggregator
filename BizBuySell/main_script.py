@@ -64,12 +64,12 @@ for value in industries:
   soup = fl.scraper_main(whole_url)
   listings = fl.find_listings(soup)
   
-  for i in listings[:1]:
+  for i in listings[:1]: #return only 1st listing from each industry
      t = fp.scraper_html(i)
      c = fp.export_from_html(t)
       # c = clean_text(k)
      c["Listing Type"] = fp.listing_type(i)
-     c["Industry"] = value #this is hard-coded for now, so it needs to be changed once we include all industries
+     c["Industry"] = value 
      c["Listing URL"] = i
      c["Listing Source"] = 'Biz Buy Sell' #hard-coded
     
